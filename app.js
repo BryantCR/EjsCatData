@@ -20,3 +20,23 @@ app.get('/cars/new', function( request, response ){
 app.listen( 8080, function(){
 console.log('This server is running in port 8080');
 });
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+app.get('/miau1', function( request, response ){
+
+    let name = "mimido"
+    let age = 5
+    let sleep = ['under the bed','the kitchen'];
+
+    let obj = { //Junta las ods variables
+        name,
+        age,
+        sleep
+}
+
+	response.render( 'cat1', obj);
+});
+
+
+
+
