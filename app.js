@@ -51,10 +51,13 @@ app.get('/:name', function( request, response ){
     let name2 = String( request.params.name );
     console.log("AAAAAAA "+ name2);
 
-    let result = miaus.find(miaus => {
-        if( miaus.name === name2 ){
-            return miaus;
+    let result = miaus.find(miau => {
+        if( miau.name === name2 ){
+            
+            return miau;
+            
         }
+        console.log(result);
         if( result === undefined ){
             response.render( 'cat1', { found: false } );
         }
@@ -64,4 +67,5 @@ app.get('/:name', function( request, response ){
     })
 
 });
+
 

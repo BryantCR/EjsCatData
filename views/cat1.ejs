@@ -11,22 +11,19 @@
         <main>
             <div style="display: flex; flex-direction: column;">
                 
-                <img style="height: auto; width: 300px; margin-bottom: 10px;" class="image_home" src="<%= miaus[0].image %>" alt="cat image">
-                
-                <p>
-                    Name : <%= miaus[0].name %>
-                </p>
+                <% if( found ){ %>
+                    <h1>Details page for <%= catInfo.name %></h1>
+                    <img src="<%= miaus.image %>" alt="Cat picture" style="width: 400px;">
+                    <h2>Age: <%= miaus.age %></h2>
+                    <h2>Sleeping spots:</h2>
+                    <% for( let j = 0; j<miaus.sleep.length; j++ ){ %>
+                        
+                        <p>
+                            <% miaus.sleep[j] %>
+                        </p>
 
-                <p>
-                    Age : <%= miaus[0].age %>
-                </p>
-
-                <% for(let i = 0; i< miaus[0].sleep.length; i++) {%>
-
-                <li>
-                    <%= miaus[0].sleep[i] %>
-                </li>
-                <% } %>
+                    <% } %>
+                <% } %>  
 
             </div>
         </main>
