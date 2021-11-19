@@ -13,16 +13,23 @@
                 Cats
             </h1>
             <div style="display: flex; flex-direction: column;">
-                <a href="/miau1">
-                    <img style="height: auto; width: 300px; margin-bottom: 10px;" class="image_home" src="./images/image0.jfif" alt="cat image">
+                <a href="/<%= miaus[0].name %>">
+                    <img style="height: auto; width: 300px; margin-bottom: 10px;" class="image_home" src="<%= miaus[0].image %>" alt="cat image">
                 </a>
-                <a href="/miau2">
-                    <img style="height: auto; width: 300px; margin-bottom: 10px;" class="image_home" src="./images/images.jfif" alt="cat image2">
+                <a href="/<%= miaus[1].name %>">
+                    <img style="height: auto; width: 300px; margin-bottom: 10px;" class="image_home" src="<%= miaus[1].image %>" alt="cat image2">
                 </a>
-                <a href="/miau3">
-                    <img style="height: auto; width: 300px; margin-bottom: 10px;" class="image_home" src="./images/Tabby_cat_with_blue_eyes-3336579.jpg" alt="cat image2">
+                <a href="/<%= miaus[2].name %>">
+                    <img style="height: auto; width: 300px; margin-bottom: 10px;" class="image_home" src="<%= miaus[2].image %>" alt="cat image2">
                 </a>
             </div>
+
+            <% for(let i = 0; i < miaus.length; i++){ %>
+                <a href="/<%= miaus[i].name %>">
+                    <img style="height: auto; width: 300px; margin-bottom: 10px;" class="image_home" src="<%= miaus[i].image %>" alt="cat image">
+                </a>
+            <% } %>
+
         </main>
     </body>
 </html>

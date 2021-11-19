@@ -1,3 +1,28 @@
+let miaus = [
+    {
+        name: "Kitty",
+        age: 5,
+        sleep:
+            ['under the bed', 'kitchen'],
+        image:'./images/image0.jfif'
+    }, 
+
+    {
+        name: "Milly",
+        age: 7,
+        sleep:
+            ['chair', 'laundrymachine'],
+        image:'./images/images.jfif'
+    }, 
+
+    {name: "Pilly",
+    age: 3,
+    sleep:
+        ['tv', 'gym'],
+    image:'./images/Tabby_cat_with_blue_eyes-3336579.jpg'
+    } 
+];
+
 const express = require( 'express' );
 const app = express();
 
@@ -10,7 +35,7 @@ app.get('/cars', function( request, response ){
 });
 
 app.get('/cats', function( request, response ){
-	response.render( 'cats' );
+	response.render( 'cats' , {miaus});
 });
 
 app.get('/cars/new', function( request, response ){
@@ -21,22 +46,22 @@ app.listen( 8080, function(){
 console.log('This server is running in port 8080');
 });
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+app.get('/:name', function( request, response ){
 
-app.get('/miau1', function( request, response ){
+    let name2 = String( request.params.name );
+    console.log("AAAAAAA "+ name2);
 
-    let name = "mimido"
-    let age = 5
-    let sleep = ['under the bed','the kitchen'];
+    let result = miaus.find(miaus => {
+        if( miaus.name === name2 ){
+            return miaus;
+        }
+        if( result === undefined ){
+            response.render( 'cat1', { found: false } );
+        }
+        else{
+            response.render( 'cat1', { found: true, miaus: result } );
+        }
+    })
 
-    let obj = { //Junta las ods variables
-        name,
-        age,
-        sleep
-}
-
-	response.render( 'cat1', obj);
 });
-
-
-
 
