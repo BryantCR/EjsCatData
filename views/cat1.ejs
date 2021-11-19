@@ -12,14 +12,20 @@
             <div style="display: flex; flex-direction: column;">
                 
                 <% if( found ){ %>
-                    <h1>Details page for <%= catInfo.name %></h1>
+                    <h2>
+                        <%= miaus.name %>
+                    </h2>
                     <img src="<%= miaus.image %>" alt="Cat picture" style="width: 400px;">
-                    <h2>Age: <%= miaus.age %></h2>
-                    <h2>Sleeping spots:</h2>
-                    <% for( let j = 0; j<miaus.sleep.length; j++ ){ %>
+                    <p>
+                        Age: <%= miaus.age %>
+                    </p>
+                    <p>
+                        Sleeping spots:
+                    </p>
+                    <% for( let i = 0; i<miaus.sleep.length; i++ ){ %>
                         
                         <p>
-                            <% miaus.sleep[j] %>
+                            <%= miaus.sleep[i] %>
                         </p>
 
                     <% } %>
